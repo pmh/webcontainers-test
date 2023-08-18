@@ -14,11 +14,11 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(process.cwd() + '/index.html')
+    res.sendFile(process.cwd() + '/container/index.html')
 })
 
 app.get('/*', (req, res) => {
-    res.sendFile(process.cwd() + `${req.originalUrl}`)
+    res.sendFile(process.cwd() + `/container${req.originalUrl}`)
 })
 
 app.post('/save-files', (req, res) => {
